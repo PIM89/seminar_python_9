@@ -17,7 +17,8 @@ class TicTacToeBoard:
     
     def check_fiels(self, cross):
         for res in self.win_coord:
-            if self.list_elem[res[0][0]][res[0][1]] == self.list_elem[res[1][0]][res[1][1]] == self.list_elem[res[2][0]][res[2][1]]:
+            if self.list_elem[res[0][0]][res[0][1]] == self.list_elem[res[1][0]][res[1][1]] == self.list_elem[res[2][0]][res[2][1]] == 'X' or\
+                self.list_elem[res[0][0]][res[0][1]] == self.list_elem[res[1][0]][res[1][1]] == self.list_elem[res[2][0]][res[2][1]] == 'O':
                 self.flag = True
                 return f'Победил игрок {cross}'
             if self.count == 0: return 'Ничья'
@@ -46,8 +47,4 @@ print(board.make_move(2, 1))
 print(board.make_move(2, 2))
 print(board.make_move(3, 1))
 print(board.make_move(2, 2))
-print(*board.get_field(), sep="\n")
-
-print('\n')
-board_2 = TicTacToeBoard()
 print(*board.get_field(), sep="\n")
